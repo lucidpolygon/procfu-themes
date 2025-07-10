@@ -864,3 +864,562 @@ iframe.pfmodalframe {
     border-top: 0;
   }
 }
+
+/*==============================================================================
+      Custom Theme for ProcFu App
+      Name: ProcFu Mira
+      Author: Thaha Wahid
+      Website: https://procfuguide.com
+      Contact: https://www.linkedin.com/in/thahawahid/
+    
+      Last Updated: 2025-06-26
+      Version: 1.0.0
+    
+    ==============================================================================*/
+
+/* General Layout */
+:root {
+    --pre-color: #transparent !important;
+  
+    --max-width: 1080px !important;
+  
+    --menu-back-color: #fff !important;
+  
+    --form-back-color: #fff !important;
+    --form-border-color: rgba(0, 0, 0, 0.08) !important;
+  
+    --input-back-color: #fff !important;
+    --input-border-color: #ccc !important;
+    --readonly-back-color: #f0f0f0 !important;
+  
+    --button-back-color-primary: #ff5a5f !important;
+    --button-fore-color-primary: #ffffff !important;
+    --button-hover-back-color-primary: #ff7e82 !important;
+    --button-hover-border-color-primary: #ff5a5f !important;
+    --button-back-color: #484848 !important;
+    --button-fore-color: #ffffff !important;
+    --button-hover-back-color: #5f5f5f !important;
+    --button-hover-border-color: #484848 !important;
+  
+    --highlight: #ff5a5f !important;
+    --primary-text: #222 !important;
+  
+    --universal-border-radius: 0.75rem !important;
+  
+    --table-border-color: #e5e7eb !important;
+    --table-border-separator-color: #d1d5db !important;
+    --table-head-back-color: #ffffff !important;
+    --table-head-fore-color: #111827 !important;
+    --table-body-back-color: #ffffff !important;
+    --table-body-fore-color: #1f2937 !important;
+    --table-body-alt-back-color: #f9fafb !important;
+    --table-body-alt-fore-color: #374151 !important;
+    --table-body-hover-back-color: #f3f4f6 !important;
+    --table-cell-padding: 0.25rem 0.5rem !important;
+  
+    --card-red-fore-color: #ff5a5f !important;
+  
+    --status-red-fore-color: #fff !important;
+    --status-red-back-color: #ff5a5f !important;
+    --status-red-border-color: transparent !important;
+  }
+  
+  .pfmcappwrapper,
+  .pfui .pf-inlay,
+  .pfui table,
+  .pf-form {
+    max-width: var(--max-width) !important;
+    margin: auto !important;
+    border: none !important;
+  }
+  
+  /* Scrollbar Styles */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 999px;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #bbb transparent;
+  }
+  
+  /* Error message Styles */
+  
+  .pfalertbox {
+    max-width: var(--max-width) !important;
+    /* position: relative !important; */
+    margin: 0.625rem auto !important;
+    border: none !important;
+    border-radius: var(--universal-border-radius) !important;
+  }
+  
+  .pfalertmsg {
+    padding: 0.5rem !important;
+    border: none !important;
+    border-radius: var(--universal-border-radius) !important;
+  }
+  
+  .card.error {
+    background: unset !important;
+    color: var(--card-red-fore-color);
+    border-color: unset !important;
+    border: none !important;
+  }
+  
+  /* Style to make footer stick at the bottom if the viewport is short */
+  body {
+    height: 100%;
+  }
+  
+  .pfmcappwrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Screen Styles */
+  .pfscreen {
+    margin-top: 1.25rem !important;
+  }
+  
+  /* Input Styles */
+  .pf-input {
+    outline: none !important;
+  }
+  
+  .pf-calc-val {
+    border-radius: var(--universal-border-radius);
+  }
+  
+  /* Select2 Styles - Multiselect Category,  */
+  .pf-form-row.row .select2-container,
+  select2-search__field,
+  select2-container--open {
+    border-radius: var(--universal-border-radius) !important;
+    width: 100% !important;
+  }
+  
+  .select2-container .selection {
+    border-radius: var(--universal-border-radius) !important;
+  }
+  
+  .select2-selection__choice {
+    text-wrap: auto !important;
+  }
+  
+  .select2-results__option.select2-results__option--highlighted {
+    border-radius: var(--universal-border-radius) !important;
+    border: 0.0625rem solid var(--form-border-color) !important;
+  }
+  
+  .select2-results {
+    border-radius: var(--universal-border-radius) !important;
+    border: 0.0625rem solid var(--form-border-color) !important;
+  }
+  
+  .select2-dropdown {
+    border: unset !important;
+  }
+  
+  /* .select2-container--default.select2-container--focus .select2-selection--multiple {
+              border-radius: var(--universal-border-radius) !important;
+          }
+  
+  
+  
+          .select2-container .select2-selection--multiple {
+              display: unset !important;
+          } */
+  
+  /* Form Styles */
+  .pf-form {
+    width: unset !important;
+    margin: 0.625rem 0 !important;
+    border: 0.0625rem solid var(--form-border-color) !important;
+  }
+  
+  .pf-form .pf-form-row {
+    border: none !important;
+  }
+  
+  @media (max-width: 1080px) {
+    .pf-form,
+    .pfalertbox {
+      margin: 0.625rem !important;
+    }
+  }
+  
+  /* Date Time Field Styles */
+  .pf-form-row .pf-datediv {
+    display: flex !important;
+    white-space: wrap !important;
+  }
+  
+  .pf-form-row .pf-datediv input {
+    width: 100% !important;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .pf-form-row .pf-datediv {
+      display: unset !important;
+      width: unset !important;
+      max-width: unset !important;
+    }
+  }
+  
+  /* Search Input */
+  .pfui .pf-search-bar {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .pfui .pf-search-bar a.button {
+    background-color: var(--button-back-color-primary);
+    color: var(--button-fore-color);
+    border-radius: var(--universal-border-radius);
+  }
+  
+  .pfui .pf-search-bar a.button:hover {
+    border-color: transparent !important;
+  }
+  
+  .pfui .pf-search-bar input,
+  .pfui .pf-search-bar a.button {
+    padding: 0.5rem !important;
+  }
+  
+  .pf-search-bar {
+    font-size: 0 !important;
+  }
+  
+  .pf-search-bar input,
+  .pf-search-bar a {
+    font-size: 1rem !important;
+  }
+  
+  /* Button Styles */
+  button {
+    background-color: var(--button-back-color);
+    color: var(--button-fore-color);
+    border-radius: var(--universal-border-radius);
+    max-width: 12.5rem;
+    min-width: 7.5rem;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-back-color);
+    border-color: var(--button-hover-border-color);
+  }
+  
+  button.primary {
+    background-color: var(--button-back-color-primary);
+    color: var(--button-fore-color-primary);
+  }
+  
+  button.primary:hover {
+    background-color: var(--button-hover-back-color-primary);
+    border-color: var(--button-hover-border-color-primary);
+  }
+  
+  /* make buttons left aligned in forms */
+  .input-group.fluid {
+    justify-content: start !important;
+  }
+  
+  /* Comment Box Styles */
+  .pf-whowhen {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.25rem;
+    display: block;
+  }
+  
+  .pf-comment {
+    word-wrap: break-word !important; /* legacy fallback */
+    overflow-wrap: break-word !important; /* modern standard */
+    white-space: normal !important; /* ensure wrapping is allowed */
+  }
+  
+  /* Badge Styles */
+  .pf-catpill,
+  .pf-file {
+    border-radius: var(--universal-border-radius) !important;
+  }
+  
+  .pf-catpill {
+    display: inline-block !important;
+    margin-right: 6px !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-radius: var(--universal-border-radius) !important;
+    white-space: nowrap !important;
+  }
+  
+  .pfTabSelect2Class,
+  .pf-file {
+    display: inline-block !important;
+    margin-right: 6px !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-radius: var(--universal-border-radius) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Table Styles */
+  td {
+    white-space: normal;
+    overflow-wrap: break-word;
+    /* modern standard */
+    word-wrap: break-word;
+    /* legacy support */
+    word-break: break-word;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .pftabwrap {
+      overflow-x: auto !important;
+      border-right: 0.0625rem solid var(--table-border-color) !important;
+    }
+  
+    .pfui table.pftable td,
+    table.pftable th {
+      padding: var(--table-cell-padding) !important;
+    }
+  
+    table thead,
+    table tbody,
+    table thead,
+    table thead {
+      border: none !important;
+    }
+  
+    .pfui table th,
+    .pfui table td {
+      min-width: 200px !important;
+      border: 0.0625rem solid var(--table-border-color) !important;
+    }
+  }
+  
+  /* GSheet Styles */
+  .tabsheet {
+    border: 0.0625rem solid var(--table-border-color) !important;
+    border-radius: var(--universal-border-radius) !important;
+    overflow: auto !important;
+    clip-path: inset(0 round var(--universal-border-radius)) !important;
+  }
+  
+  .pfui .pfformreset {
+    margin: 0.625rem !important;
+  }
+  
+  .gSheetMenu {
+    border-radius: var(--universal-border-radius) !important;
+  }
+  
+  /* Card Styles */
+  .pfui .pf-cards .pf-card > div:first-child {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  /* Force Flexbox layout on container */
+  .pfui .pfcardwrap {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    justify-content: space-between !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Reset float/inline-block and allow full flex behavior */
+  .pfui .pfcardwrap .pf-card {
+    flex: 1 1 100% !important;
+    min-width: 250px !important;
+    max-width: 100% !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    float: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    /* remove shadow */
+    border-radius: var(--universal-border-radius);
+  }
+  
+  /* 2 per row on tablets */
+  @media (min-width: 768px) and (max-width: 1079px) {
+    .pfui .pfcardwrap .pf-card {
+      flex: 1 1 calc(50% - 2rem) !important;
+    }
+  }
+  
+  /* 3 per row on large screens */
+  @media (min-width: 1080px) {
+    .pfui .pfcardwrap .pf-card {
+      flex: 1 1 calc(33.333% - 2rem) !important;
+    }
+  }
+  
+  @media (max-width: 1080px) {
+    .pfui .pfcardwrap .pf-card {
+      margin: 0 0.625rem !important;
+    }
+  }
+  
+  .pfui .pf-cards .pf-card img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    border-radius: var(--universal-border-radius);
+    display: block !important;
+  }
+  
+  .pfui .pfcardwrap .pf-card div {
+    text-align: left !important;
+  }
+  
+  /* Load More Button */
+  .pfui .pf-load-more::first-letter {
+    text-transform: uppercase;
+  }
+  
+  .pfui .pf-load-more {
+    margin-top: 1.25rem !important;
+  }
+  
+  .pfui .pf-load-more a {
+    background-color: var(--button-back-color);
+    color: var(--button-fore-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--universal-border-radius);
+  }
+  
+  .pfui .pf-load-more a:hover {
+    background-color: var(--button-hover-back-color);
+    border-color: var(--button-hover-border-color);
+  }
+  
+  /* Modal Window Styles */
+  .pfui-modal-window {
+    border-radius: var(--universal-border-radius);
+  }
+  
+  @media (max-width: 768px) {
+    .pfui-modal-window {
+      margin-right: unset !important;
+    }
+  }
+  
+  /* Calendar Styles */
+  .fc .fc-toolbar.fc-header-toolbar button {
+    min-width: unset !important;
+    margin-right: 0.5rem !important;
+    padding: 0.2rem 1rem !important;
+    border-radius: calc(var(--universal-border-radius) - 5%) !important;
+  }
+  
+  .fc .fc-toolbar.fc-header-toolbar button::first-letter {
+    text-transform: uppercase !important;
+  }
+  
+  @media (max-width: 768px) {
+    .fc .fc-toolbar {
+      display: unset !important;
+      text-align: center !important;
+    }
+  
+    .fc-toolbar-title {
+      margin: 0.5rem 0 !important;
+    }
+  
+    .pfui .pfcal table {
+      border: unset !important;
+    }
+  
+    .fc-timeGridWeek-button {
+      display: none !important;
+    }
+  
+    /* Show only the first letter of the day in the header */
+    .fc-col-header-cell a {
+      color: transparent !important;
+      position: relative !important;
+    }
+  
+    .fc-col-header-cell a::first-letter {
+      color: black !important;
+      position: absolute !important;
+      left: 0 !important;
+    }
+  
+    .fc-view-harness.fc-view-harness-active {
+      height: 37.5rem !important;
+    }
+  }
+  
+  /* START SCREEN ONLY. */
+  /* Border for the whole screen.  */
+  div.pfscreen[data-screen="0"] {
+    border: 0.0625rem solid var(--form-border-color);
+    border-radius: var(--universal-border-radius);
+  }
+  
+  div.pfscreen[data-screen="0"] .pf-form {
+    border: unset !important;
+    margin: unset !important;
+  }
+  
+  /* Remove initial red outline */
+  .pfscreen[data-screen="0"] .pf-input {
+    border-color: var(--form-border-color) !important;
+  }
+  
+  /* Remove initial red outline */
+  .pfscreen[data-screen="0"] h3 {
+    padding: calc(2 * var(--universal-padding)) var(--universal-padding);
+  }
+  
+  /* Margin on Tab,Mobile */
+  @media (max-width: 1080px) {
+    div.pfscreen[data-screen="0"] {
+      margin: 0.625rem !important;
+    }
+  }
+  
+  /* margin to bring the screen down a bit so error messages does not overlap */
+  div.pfscreen[data-screen="0"] {
+    margin-top: 5rem !important;
+  }
+  
+  /* Fix Blue background on buttons in login screen */
+  /* Unset from https://procfuwidgets.b-cdn.net/pfui/pf_ui_mini.css?v=20 */
+  button.primary:hover,
+  button.primary:focus,
+  [type="button"].primary:hover,
+  [type="button"].primary:focus,
+  [type="submit"].primary:hover,
+  [type="submit"].primary:focus,
+  [type="reset"].primary:hover,
+  [type="reset"].primary:focus,
+  .button.primary:hover,
+  .button.primary:focus,
+  [role="button"].primary:hover,
+  [role="button"].primary:focus {
+    --button-hover-back-color: var(--button-hover-back-color-primary) !important;
+  }
+  
