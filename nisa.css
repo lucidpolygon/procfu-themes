@@ -1,0 +1,866 @@
+/* main layout */
+.pfmcappwrapper {
+  max-width: 900px;
+  margin: auto;
+}
+.pfui iframe {
+  width: 100%;
+  border: 0;
+  min-height: 300px;
+}
+.pfui .pfm-header,
+.pfui .pfm-footer {
+  clear: both;
+}
+
+/* mini css missing some input types */
+
+.pfui input:not([type]),
+.pfui input[type="date"],
+.pfui input[type="time"],
+.pfui input[type="datetime-local"] {
+  box-sizing: border-box;
+  background: var(--input-back-color);
+  color: var(--input-fore-color);
+  border: 0.0625rem solid var(--input-border-color);
+  border-radius: var(--universal-border-radius);
+  margin: calc(var(--universal-margin) / 2);
+  padding: var(--universal-padding) calc(1.5 * var(--universal-padding));
+}
+.pfui input[type="file"] {
+  box-sizing: border-box;
+  margin: calc(var(--universal-margin) / 2);
+}
+
+/* smaller inlays like login screen */
+
+.pfui .pf-inlay {
+  max-width: 800px;
+  margin: 10px 0;
+}
+.pfui .pf-inlay .pf-label {
+  min-width: 200px;
+  display: inline-block;
+}
+.pfui .pf-inlay input[type="text"],
+.pfui .pf-inlay input[type="password"] {
+  width: 100%;
+}
+.pfui .pf-inlay button.pfbtnlogin {
+  width: 50%;
+  margin-right: 50%;
+}
+.pfui .pf-inlay button.pfbtnsimple {
+  margin: 0 40px;
+}
+
+/* standard forms */
+
+.pf-form {
+  width: calc(100% - 34px);
+  max-width: 900px;
+}
+.pf-form .pf-info {
+  padding: 2px 5px;
+  margin: 2px 5px;
+}
+.pf-form .pf-error {
+  padding: 10px 15px;
+  margin: 2px 5px;
+  background: red;
+  color: white;
+}
+.pf-form .pf-file {
+  border: 1px solid var(--form-border-color);
+  padding: 7px 13px;
+  background: var(--input-back-color);
+  margin-right: 10px;
+  display: inline-block;
+}
+.pf-form .pf-file:hover {
+  border: 1px solid var(--a-link-color);
+  background: var(--back-color);
+  text-decoration: none;
+}
+.pf-form .pf-newfile {
+  border: 1px solid var(--form-border-color);
+  padding: 7px 13px;
+  background: var(--input-back-color);
+  margin-right: 10px;
+  display: inline-block;
+}
+.pf-form input[type="file"] {
+  display: block;
+}
+.pf-form .pf-form-row {
+  padding: 2px 5px;
+  margin: 2px 5px;
+  border: 1px solid var(--form-row-border-color);
+  width: calc(100% - 6px);
+}
+.pf-form .pf-label {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 7px;
+  padding-left: 8px;
+}
+.pf-form .pf-required {
+  padding-left: 7px;
+  color: red;
+}
+.pf-form .pf-field-help {
+  margin-left: 4px;
+  margin-top: -4px;
+  font-size: smaller;
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 4px;
+  white-space: normal;
+}
+.pf-form .pf-field-help.pf-help-2 {
+  margin-top: 0;
+}
+.pf-form .pf-field-help.pf-help-hidden {
+  display: none;
+}
+.pf-form .pf-value,
+.pf-form-row .pf-input {
+  display: inline-block;
+  width: 100%;
+  color: var(--input-alt-fore-color);
+  min-height: 32px;
+}
+.pf-form textarea.pf-input {
+  min-height: 125px;
+  max-width: 100%;
+  min-width: 100%;
+}
+.pf-form-row .pf-date {
+  width: 40%;
+}
+@media screen and (max-width: 767px) {
+  .pf-form-row .pf-date {
+    width: 90%;
+    max-width: 250px;
+  }
+}
+.pf-form-row .pf-datediv {
+  width: auto;
+  display: initial;
+  white-space: nowrap;
+}
+.pf-form-row .pf-datediv input {
+  width: auto;
+  margin-right: 0;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: inline-block;
+  margin-top: 2%;
+  float: right;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .pf-form-row .pf-datediv {
+    width: 90%;
+    max-width: 250px;
+  }
+}
+.pf-form .pf-value {
+  margin-left: 8px;
+  box-sizing: border-box;
+}
+.pf-form .pf-value p {
+  margin: 8px 0;
+}
+.pf-form .pf-calc-val .pf-catpill {
+  margin: 2px;
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid var(--form-border-color);
+  background: var(--input-back-color);
+}
+.pf-form .pf-err-row {
+  border: 1px solid var(--form-error-border-color);
+  background: var(--form-error-back-color);
+}
+.pf-form .pf-selector {
+  border: 1px solid var(--form-border-color);
+  background: var(--input-back-color);
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-left: 4px;
+  white-space: normal;
+  min-height: 26px;
+  color: var(--input-alt-fore-color);
+}
+.pf-form .pf-selector:hover {
+  border-color: var(--a-link-color);
+}
+.pf-form .pf-calc-val {
+  border: 1px solid var(--form-border-color);
+  padding: 2px;
+  margin-left: 4px;
+  white-space: normal;
+  min-height: 32px;
+  color: var(--input-alt-fore-color);
+}
+.pf-form .pf-field-readonly .pf-calc-val {
+  background: var(--input-locked-back-color);
+  color: var(--input-locked-fore-color);
+}
+.pf-form .pf-button {
+  cursor: pointer;
+}
+.pf-form .pf-button:first-child {
+  margin-left: 4px;
+  margin-right: 12px;
+}
+.pf-form .pf-button.primary {
+  color: white;
+}
+.pf-form .pf-button.pf-disabled {
+  cursor: default;
+}
+.pf-comment {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--table-border-color);
+}
+.pf-comment .pf-whowhen {
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
+.pf-form .pf-image-wrapper {
+  margin: 4px 6px 6px 4px;
+  padding: 10px;
+  background: var(--back-color);
+  display: inline-block;
+  position: relative;
+  border: 1px solid var(--form-border-color);
+  line-height: 0;
+}
+.pf-form .pf-image-wrapper:hover {
+  border: 1px solid var(--a-link-color);
+}
+.pf-form .pf-image-wrapper img {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 100%;
+}
+.pf-form .pf-image-wrapper img.pf-img-thumb {
+  max-width: 150px;
+  max-height: 100px;
+  cursor: pointer;
+}
+.pf-form .pf-image-destroyer {
+  cursor: pointer;
+  position: absolute;
+  right: 2px;
+  top: -5px;
+  color: red;
+  font-size: 0.8em;
+  display: none;
+}
+.pf-form .pf-file-wrapper {
+  margin: 4px 6px 6px 4px;
+  display: inline-block;
+  position: relative;
+}
+.pf-form .pf-file-wrapper .pf-image-destroyer {
+  right: 12px;
+  top: -5px;
+}
+.pf-form .pf-image-wrapper:hover .pf-image-destroyer {
+  display: inline-block;
+}
+.pf-form .pf-file-wrapper:hover .pf-image-destroyer {
+  display: inline-block;
+}
+.pfui .pf-upload {
+  display: inline-block;
+}
+.pf-form .pf-image-editor {
+  cursor: pointer;
+  position: absolute;
+  right: 2px;
+  bottom: -1px;
+  color: #1976d2;
+  font-size: 1em;
+  display: none;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2em;
+}
+.pf-form .pf-image-wrapper:hover .pf-image-editor {
+  display: inline-block;
+}
+.pf-form .pf-image-wrapper .pf-image-editor:hover {
+  background: #fff;
+}
+
+/* select2 */
+
+.select2-container {
+  border: 0.0625rem solid var(--input-border-color) !important;
+  background: var(--input-back-color) !important;
+  cursor: pointer;
+  margin-left: 4px !important;
+  min-height: 36px;
+  color: var(--input-alt-fore-color) !important;
+}
+.select2-selection {
+  background: var(--input-back-color) !important;
+  border: 0 !important;
+}
+.select2-selection li.select2-selection__choice {
+  background: var(--form-alt-back-color) !important;
+  color: var(--form-fore-color);
+  border: var(--form-row-border-color);
+}
+.select2-container:hover {
+  border-color: var(--a-link-color) !important;
+}
+.select2-results {
+  background: var(--form-back-color);
+  color: var(--form-fore-color);
+  border: var(--form-row-border-color);
+}
+.select2-results__option {
+  min-height: 1.5em !important;
+}
+.select2-container .select2-selection--single {
+  height: 34px !important;
+}
+
+/* Error Alerts etc - PfUi.floatMessage */
+
+.pfalertbox {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  max-width: 1000px;
+  margin: auto;
+}
+.pfalertmsg {
+  margin-bottom: 0.2em;
+  padding: 1em;
+  position: relative;
+  background: var(--status-default-back-color);
+  color: var(--status-default-fore-color);
+  border: 1px solid var(--status-default-border-color);
+  border-radius: 0.2em;
+}
+.pfalertbtn {
+  position: absolute;
+  top: 0;
+  right: 0.3em;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1em;
+  font-size: 1.3em;
+}
+.pfalertmsg.grn {
+  background: var(--status-green-back-color);
+  color: var(--status-green-fore-color);
+  border: 1px solid var(--status-green-border-color);
+}
+.pfalertmsg.red {
+  background: var(--status-red-back-color);
+  color: var(--status-red-fore-color);
+  border: 1px solid var(--status-red-border-color);
+  font-weight: bold;
+}
+.pfalertmsg.blu {
+  background: var(--status-blue-back-color);
+  color: var(--status-blue-fore-color);
+  border: 1px solid var(--status-blue-border-color);
+}
+
+/* tables */
+
+.pfui table.pf-tr-clickable tr {
+  cursor: pointer;
+}
+.pfui table.pf-tr-clickable tr:hover {
+  background-color: var(--table-body-hover-back-color);
+}
+.pfui table.pf-tr-clickable tr:hover td {
+  background-color: var(--table-body-hover-back-color);
+}
+.pfui table {
+  max-height: unset;
+} /* fix for mini reducing table height */
+.pfui table th {
+  background: inherit;
+  text-align: center;
+}
+.pfui table tr {
+  background: inherit;
+}
+.pfui table td,
+table th {
+  padding: var(--universal-padding);
+  background: inherit;
+}
+.pfui table.pftable th {
+  background: var(--table-head-back-color);
+  text-align: inherit;
+}
+.pfui table.pftable tr {
+  background: var(--table-body-back-color);
+}
+.pfui table.pftable td,
+table.pftable th {
+  padding: var(--table-cell-padding);
+} /* 2 times --universal-padding */
+.pfui .pf-table-search {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: right;
+}
+.pfui .pf-search-bar {
+  margin: 2px 7px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: right;
+}
+.pfui .pf-search-bar input,
+.pfui .pf-search-bar a.button {
+  padding: 1px 5px;
+  margin: 1px;
+}
+.pfui .pf-load-more {
+  margin: 2px 7px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+
+/* maps */
+
+.pfui div.pfmap {
+  width: 100%;
+  height: 500px;
+}
+/* fix google maps */
+.pfmap [role="button"] {
+  display: unset;
+  background: unset;
+  color: unset;
+  border: unset;
+  border-radius: unset;
+  padding: unset;
+  margin: unset;
+  cursor: unset;
+  transition: unset;
+}
+.pfmap a[role="button"]:hover {
+  background: unset;
+  border-color: unset;
+}
+
+/* cards */
+
+.pfui .pf-cards {
+  /* padding: 20px; */
+}
+.pfui .pf-cards .pf-card {
+  padding: 20px;
+  width: calc(33% - 80px);
+  min-width: 200px;
+  min-height: 105px;
+  display: inline-block;
+  float: left;
+  border: 1px solid var(--card-border-color);
+  margin: 20px;
+  box-shadow: 2px 2px 2px var(--form-border-color);
+  background: var(--card-back-color);
+}
+.pfui .pf-cards .pf-card img {
+  width: 100%;
+  height: 75px;
+  object-fit: cover;
+}
+.pfui .pf-cards .pf-card-clickable {
+  cursor: pointer;
+}
+.pfui .pf-cards .pf-card-clickable:hover {
+  border: 1px solid var(--table-border-color);
+  box-shadow: 2px 2px 2px var(--table-border-color);
+  margin: 18px 22px 22px 18px;
+}
+.mce-tinymce * {
+  --universal-margin: 0;
+  --universal-padding: 0;
+} /* fix for mini css breaking mce */
+.pfui .pf-cards:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* markdown tables */
+
+.pfui .pf-calc-val table th,
+.pfui .pf-calc-val table td {
+  text-align: left;
+}
+.pfui .pf-calc-val table th.pftd-center,
+.pfui .pf-calc-val table td.pftd-center {
+  text-align: center;
+}
+.pfui .pf-calc-val table th.pftd-right,
+.pfui .pf-calc-val table td.pftd-right {
+  text-align: right;
+}
+@media screen and (max-width: 767px) {
+  .pfui .pf-calc-val table td {
+    text-align: right;
+  }
+  .pfui .pf-calc-val table td.pftd-center {
+    text-align: right;
+  }
+  .pfui .pf-calc-val table td.pftd-right {
+    text-align: right;
+  }
+  .pfui .pfforcetables table td {
+    text-align: left;
+  }
+  .pfui .pfforcetables table td.pftd-center {
+    text-align: center;
+  }
+  .pfui .pfforcetables table td.pftd-right {
+    text-align: right;
+  }
+}
+
+/* preview wireframe animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+  }
+}
+.pfui .pfpreview {
+  opacity: 0.35;
+  animation: fadeIn 600ms infinite alternate;
+  cursor: wait !important;
+  pointer-events: none;
+}
+.pfui .previewTable {
+  border-collapse: collapse;
+  width: initial;
+  display: table !important;
+}
+.pfui .previewTable td {
+  border: 1px solid var(--form-border-color) !important;
+  color: var(--table-border-separator-color);
+  padding: 2px 5px;
+  min-width: 30px;
+}
+
+/* modal iframe from PfJs */
+
+iframe.pfmodalframe {
+  width: 80vw;
+  max-width: 700px;
+  height: 70vh;
+  max-height: 500px;
+  border: 1px solid var(--form-border-color);
+}
+
+/* sheet stuff */
+
+.pfui .tabsheet {
+  width: 100%;
+  max-height: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+.pfui .tabsheet.pfsheetoverflow {
+  overflow: initial;
+}
+/* sheet select2 force bottom as per https://stackoverflow.com/a/38056037/4697846 - cause on top gets cut off */
+.pfui .tabsheet .select2-dropdown {
+  position: static;
+}
+.pfui .tabsheet .select2-dropdown.select2-dropdown--above {
+  margin-top: 221px;
+  margin-bottom: 25px;
+}
+.pfui .pftabspinner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: none;
+}
+.pfui .pfformreset {
+  background: unset;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* tab action menu */
+.pfui div.gSheetMenuContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.pfui div.gSheetMenuContainer div.gSheetMenu {
+  background: var(--back-color);
+  padding: 10px 20px 5px 20px;
+  white-space: nowrap;
+  position: absolute;
+}
+.pfui div.gSheetMenuContainer div.gSheetMenu button {
+  margin: 0;
+}
+.pfui div.gSheetMenuContainer div.gSheetMenu button {
+  width: 100%;
+  text-align: center;
+}
+.pfui div.gSheetMenuContainer div.gSheetMenu .gSheetButtonHint {
+  font-size: 10px;
+  color: var(--hint-fore-color);
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.pfui .pf-sheet-search {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-align: right;
+}
+.pfui .pf-sheet-search input {
+  padding: 1px 5px;
+  margin: 1px;
+}
+.pfui .gSheet {
+  background: var(--card-back-color);
+  color: var(--card-fore-color);
+  width: calc(100% - 2px);
+}
+.pfui .gSheet .pfSheetActiveRow {
+  background: var(--status-blue-back-color);
+}
+.pfui .pfSheetSearchInput {
+  max-width: 50vw;
+}
+.pfui .pfTabSelect2Class {
+  margin-right: 5px;
+  padding: 1px 3px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* modals */
+
+.pfui-modal-cover {
+  position: fixed;
+  z-index: 1001;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+.pfui-modal-window {
+  display: block;
+  z-index: 1002;
+  position: absolute;
+  max-width: 700px;
+  min-width: 200px;
+  min-height: 100px;
+  margin-right: -50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  max-height: 80vh;
+  overflow: auto;
+  background: var(--back-color);
+  padding: 35px;
+  border: 1px solid var(--table-border-color);
+}
+.pfui-modal-closer {
+  position: fixed;
+  right: 6px;
+  top: 0px;
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.pfui-modal-content {
+}
+.pfui-modal-content .pf-image-editor {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  color: #1976d2;
+  padding: 3px;
+}
+.pfui button a {
+  color: var(--button-fore-color);
+}
+.pfui button.primary a,
+.pfui button.secondary a,
+.pfui button.tertiary a {
+  color: var(--input-back-color);
+}
+
+/* tabs */
+
+.pfui .pfui-tabs {
+  user-select: none;
+  margin: var(--universal-margin);
+  margin-bottom: calc(-0.5rem - 1px);
+  margin-top: 1rem;
+}
+.pfui .pfui-tabs .pfui-tab {
+  display: inline-block;
+  border: 1px solid var(--form-alt-back-color);
+  background: var(--form-border-color);
+  padding: 0.3em 1em;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.pfui .pfui-tabs .pfui-tab:hover {
+  background: var(--input-back-color);
+}
+.pfui .pfui-tab.pfui-tabactive {
+  border: 1px solid var(--form-border-color);
+  background: var(--form-back-color);
+}
+.pfui input.pfChkTabCheck {
+  background: white;
+}
+.pfui .pfui-embedded-tabs .pfui-embedded-tabstrip {
+  border-bottom: 1px solid var(--form-border-color);
+}
+.pfui .pfui-embedded-tabs .pfui-embedded-tab .select2-container {
+  width: 100% !important;
+}
+
+/* fix for fullcalendar td cutting off */
+
+.pfui .pfcal {
+  background: var(--back-color);
+  color: var(--fore-color);
+}
+.pfui .pfcal table td {
+  overflow: visible;
+}
+.pfui .pfcal .fc-event {
+  cursor: pointer;
+}
+.fc-button {
+  background: var(--button-back-color) !important;
+  border: 1px solid var(--button-border-color) !important;
+  padding: 1px 5px !important;
+  border-radius: var(--universal-border-radius) !important;
+  color: var(--button-fore-color) !important;
+}
+.fc-button:hover {
+  background: var(--button-hover-back-color) !important;
+  border-color: var(--button-hover-border-color) !important;
+}
+.fc-button:focus {
+  box-shadow: none !important;
+}
+
+/* tables forced as tables (used in fullcalendar) */
+
+@media screen and (max-width: 767px) {
+  .pfforcetables table {
+    border: 0.0625rem solid var(--table-border-separator-color);
+  }
+  .pfforcetables table thead,
+  .pfforcetables table th,
+  .pfforcetables table.horizontal thead,
+  .pfforcetables table.horizontal th {
+    border: initial;
+    border-bottom: 0.0625rem solid var(--table-border-separator-color);
+    height: initial;
+    width: initial;
+    margin: initial;
+    overflow: initial;
+    padding: initial;
+    position: initial;
+    clip: initial;
+    -webkit-clip-path: initial;
+    clip-path: initial;
+    padding-left: 15px;
+  }
+  .pfforcetables table tbody,
+  .pfforcetables table.horizontal tbody {
+    border: initial;
+    border-top: 0;
+    display: table-row-group;
+  }
+  .pfforcetables table tr,
+  .pfforcetables table.horizontal tr {
+    display: table-row;
+    border: initial;
+    border-radius: initial;
+    background: initial;
+    padding: initial;
+    margin: initial;
+    margin-bottom: initial;
+  }
+  .pfforcetables table th,
+  .pfforcetables table td,
+  .pfforcetables table.horizontal th,
+  .pfforcetables table.horizontal td {
+    width: initial;
+  }
+  .pfforcetables table td,
+  .pfforcetables table.horizontal td {
+    display: table-cell;
+    border: initial;
+    border-top: 0.0625rem solid var(--table-border-color);
+    text-align: initial;
+  }
+  .pfforcetables table td:before,
+  .pfforcetables table.horizontal td:before {
+    content: initial;
+    float: initial;
+    font-weight: initial;
+  }
+  .pfforcetables table td:first-child,
+  .pfforcetables table.horizontal td:first-child {
+    border-top: 0.0625rem solid var(--table-border-color);
+  }
+  .pfforcetables table th:first-child,
+  .pfforcetables table.horizontal th:first-child {
+    border-top: initial;
+  }
+  .pfforcetables table tbody tr:last-child td,
+  .pfforcetables table.horizontal tbody tr:last-child td {
+    border-right: initial;
+  }
+  .pfforcetables table:not(.horizontal) tbody td {
+    border-top: 0;
+  }
+}
