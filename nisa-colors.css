@@ -1,4 +1,3 @@
-/* Core module CSS variable definitions */
 :root {
     --fore-color: #111;
     --hint-fore-color: #888;
@@ -6,29 +5,33 @@
     --back-color: #fff;
     --secondary-back-color: #f0f0f0;
     --blockquote-color: #f57c00;
-    --pre-color: #1565c0;
+    --pre-color: transparent; /* Updated */
     --border-color: #aaa;
     --secondary-border-color: #ddd;
     --heading-ratio: 1.19;
     --universal-margin: 0.5rem;
     --universal-padding: 0.5rem;
-    --universal-border-radius: 0.125rem;
+    --universal-border-radius: 0.75rem; /* Updated */
     --a-link-color: #0277bd;
     --a-visited-color: #0277bd;
+
+    --max-width: 1080px; /* NEW + Updated */
+  
+    --menu-back-color: #fff; /* NEW + Updated */
 }
 
 /* Table module CSS variable definitions. */
 :root {
-    --table-border-color: #aaa;
-    --table-border-separator-color: #666;
-    --table-head-back-color: #e6e6e6;
-    --table-head-fore-color: #111;
-    --table-body-back-color: #f8f8f8;
-    --table-body-fore-color: #111;
-    --table-body-alt-back-color: #eee;
-    --table-body-alt-fore-color: #333;
-    --table-body-hover-back-color: #def;
-    --table-cell-padding: 1rem;
+    --table-border-color: #e5e7eb; /* Updated */
+    --table-border-separator-color: #d1d5db; /* Updated */
+    --table-head-back-color: #ffffff; /* Updated */
+    --table-head-fore-color: #111827; /* Updated */
+    --table-body-back-color: #ffffff; /* Updated */
+    --table-body-fore-color: #1f2937; /* Updated */
+    --table-body-alt-back-color: #f9fafb; /* Updated */
+    --table-body-alt-fore-color: #374151; /* Updated */
+    --table-body-hover-back-color: #f3f4f6; /* Updated */
+    --table-cell-padding: 0.25rem 0.5rem; /* Updated */
 }
 
 /* Card component CSS variable definitions */
@@ -36,30 +39,41 @@
     --card-back-color: #fff;
     --card-fore-color: #111;
     --card-border-color: #ddd;
+
+    --card-red-fore-color: #ff5a5f; /* NEW + Updated */
 }
 
 /* Input_control module CSS variable definitions */
 :root {
-    --form-back-color: #f0f0f0;
+    --form-back-color: #fff; /* Updated */
     --form-alt-back-color: #ccc;
     --form-fore-color: #111;
-    --form-border-color: #ddd;
+    --form-border-color: rgba(0, 0, 0, 0.08); /* Updated */
     --form-row-border-color: #eee;
     --form-error-back-color: #fdd;
-    --form-error-border-color: #c00;
-    --input-back-color: #f8f8f8;
+    --form-error-border-color: #ff5a5f; /* Updated */
+    --input-back-color: #fff; /* Updated */
     --input-fore-color: #111;
     --input-alt-fore-color: #333;
-    --input-border-color: #ddd;
+    --input-border-color: #ccc; /* Updated */
     --input-focus-color: #0288d1;
-    --input-invalid-color: #d32f2f;
+    --input-invalid-color: #ff5a5f; /* Updated */
     --input-locked-back-color: #f0f0f0;
     --input-locked-fore-color: #111;
-    --button-back-color: #e2e2e2;
-    --button-hover-back-color: #dcdcdc;
-    --button-fore-color: #212121;
+
+    --readonly-back-color: #f0f0f0; /* NEW + Updated */
+
+    --button-back-color: #484848; /* Updated */
+    --button-hover-back-color: #5f5f5f; /* Updated */
+    --button-fore-color: #ffffff; /* Updated */
     --button-border-color: transparent;
-    --button-hover-border-color: transparent;
+    --button-hover-border-color: #484848; /* Updated */
+
+    --button-back-color-primary: #ff5a5f; /* NEW + Updated */
+    --button-fore-color-primary: #ffffff; /* NEW + Updated */
+    --button-hover-back-color-primary: #ff7e82; /* NEW + Updated */
+    --button-hover-border-color-primary: #ff5a5f; /* NEW + Updated */
+
     --button-group-border-color: rgba(124, 124, 124, 0.54);
 }
 
@@ -103,7 +117,7 @@
     --modal-close-hover-color: #f0f0f0;
 }
 
-/* Progess module CSS variable definitions */
+/* Progress module CSS variable definitions */
 :root {
     --progress-back-color: #ddd;
     --progress-fore-color: #555;
@@ -133,13 +147,21 @@
     --status-default-back-color: #eee;
     --status-default-fore-color: #333;
     --status-default-border-color: #ddd;
+
     --status-green-back-color: #dfd;
     --status-green-fore-color: #060;
     --status-green-border-color: #bdb;
-    --status-red-back-color: #d11;
-    --status-red-fore-color: #fff;
-    --status-red-border-color: #b00;
+
+    --status-red-back-color: #ff5a5f; /* Updated */
+    --status-red-fore-color: #fff; /* Updated */
+    --status-red-border-color: transparent; /* Updated */
+
     --status-blue-back-color: #def;
     --status-blue-fore-color: #036;
     --status-blue-border-color: #bcd;
+}
+
+:root {
+    --highlight: #ff5a5f; /* NEW + Updated */
+    --primary-text: #222; /* NEW + Updated */
 }
